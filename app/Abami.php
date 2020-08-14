@@ -1,0 +1,15 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Abami extends Model
+{
+    protected $fillable=['image','name','history','user_id','deleted_at'];
+    
+    public function user()
+    {
+         return $this ->belongsTo(User::class, 'user_id');
+    }
+}
